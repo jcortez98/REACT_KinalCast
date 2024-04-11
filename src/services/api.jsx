@@ -2,7 +2,7 @@ import axios from "axios";
 import { logout } from "../shared/hooks/useLogout";
 
 const apliClient = axios.create({
-  baseURL: "http://localhost:8080/twitch/v1",
+  baseURL: "https://kinal-cast-68zgo73bx-jbraulio85s-projects.vercel.app/twitch/v1",
   timeout:1000
 });
 
