@@ -1,9 +1,15 @@
-/* eslint-disable react/prop-types */
-import { Toaster } from 'react-hot-toast'
+import { useRoutes } from 'react-router-dom';
+import routes from './routes.jsx';
+import { Toaster } from 'react-hot-toast';
 
-export const App = ({ children }) => {
-  return <>
-    {children}
-    <Toaster position='botton-right' reverseOrder={false}/>
+export const App = () => {
+  let element = useRoutes(routes);
+  return (
+    <>
+      {element}
+      <Toaster position='bottom-right' reverseOrder={false}/>
     </>
+  );
 }
+
+

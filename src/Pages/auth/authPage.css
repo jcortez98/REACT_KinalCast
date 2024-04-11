@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: space-evenly;
     height: auto;
-    box-shadow: 10px 10px 10px #772ce8;
+    box-shadow: 10px 10px 10px #0b336b;
     padding: 25px;
 }
 
@@ -39,7 +39,7 @@
 
 .auth-form button {
     cursor: pointer;
-    background-color: #772ce8; /* Twitch Purple */
+    background-color: #0b336b; /* Twitch Purple */
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -70,7 +70,7 @@
 }
 
 .auth-form-switch-label {
-    color: #772ce8;
+    color: #2b7df0;
     font-weight: bold;
     font-size: 14px;
     transition: 0.3s;

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
-import { register as registerRequest } from '../../configs'
+import { register as registerRequest } from '../../services'
 import toast from 'react-hot-toast'
 
 export const useRegister = () => {
@@ -18,14 +18,15 @@ export const useRegister = () => {
         setIsLoading(false)
 
         if(response.error){
-            return toast.error(response.e?.response?.data || 'Error occured while Signin up. Please Try again!!!')
+            return toast.error(response.e?.response?.data 
+                || 'Error occured while Signin up. Please Try again!!!')
         }
 
         const { userDetails } = response.data 
 
-        localStorage.setItem('user', userDetails)
+        localStorage.setItem('user', JSON.stringify(userDetails))
 
-        navigate('/')
+        navigate('/channels')
     }
 
     return{

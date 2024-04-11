@@ -46,7 +46,7 @@ export const Register = ({ switchAuthHandler }) => {
       ...prevState,
       [field]: {
         ...prevState[field],
-        value: value,
+        value,
       },
     }));
   };
@@ -96,7 +96,7 @@ export const Register = ({ switchAuthHandler }) => {
 
   return (
     <div className="register-container">
-      <Logo text={"Sign up to the Twitch Clon"} />
+      <Logo text={"Register KinalCast"} />
       <form className="auth-form">
         <Input
           field="email"
@@ -146,7 +146,7 @@ export const Register = ({ switchAuthHandler }) => {
         </button>
       </form>
       <span onClick={switchAuthHandler} className="auth-form-switch-label">
-        Already have an account ? Sign in
+        ¿Ya tienes una cuenta? ¡Inicia Sesión acá!
       </span>
     </div>
   );

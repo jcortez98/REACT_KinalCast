@@ -32,7 +32,7 @@ export const Login = ({ switchAuthHandler }) => {
       ...prevState,
       [field]: {
         ...prevState[field],
-        value: value,
+        value
       },
     }));
   };
@@ -65,11 +65,14 @@ export const Login = ({ switchAuthHandler }) => {
     login(formState.email.value, formState.password.value)
   }
 
-  const isSubmitButtonDisabled = !formState.password.isValid || !formState.email.isValid || isLoading
+  const isSubmitButtonDisabled = 
+  isLoading ||
+  !formState.password.isValid || 
+  !formState.email.isValid
 
   return (
     <div className="login-container">
-      <Logo text={"Login to the Twitch Clon"} />
+      <Logo text={"Login KinalCast"} />
       <form className="auth-form">
         <Input
           field="email"
@@ -99,7 +102,7 @@ export const Login = ({ switchAuthHandler }) => {
         </button>
       </form>
       <span onClick={switchAuthHandler} className="auth-form-switch-label">
-        Don't have an account? Sign up
+        ¿Aún no tienes una cuenta? ¡Registrate...!
       </span>
     </div>
   );
