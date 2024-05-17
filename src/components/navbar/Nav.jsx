@@ -50,13 +50,13 @@ export const Nav = () => {
     <div className="nav-container">
       <NavLogo />
       <div className="nav-buttons-container">
-        <NavButton text="Browse" onClickHandler={handleNavigateToChannelsPage} />
+        <NavButton text="Inicio" onClickHandler={handleNavigateToChannelsPage} />
         {!isLogged ? (
-          <NavButton text="Login" onClickHandler={handleNavigateToAuthPage} />
+          <NavButton text="Iniciar Sesión" onClickHandler={handleNavigateToAuthPage} />
         ) : (
           <div>
-            <NavButton text="My Account" onClickHandler={handleNavigateToSettingsPage} />
-            <NavButton text="Logout" onClickHandler={handleLogout} />
+            <NavButton text="Mi cuenta" onClickHandler={handleNavigateToSettingsPage} />
+            <NavButton text="Cerrar Sesión" onClickHandler={handleLogout} />
           </div>
         )}
       </div>

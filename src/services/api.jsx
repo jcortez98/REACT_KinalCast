@@ -1,18 +1,20 @@
 import axios from "axios";
 import { logout } from "../shared/hooks/useLogout";
 
+
+const ip = "192.168.42.125";
+
 const apliClient = axios.create({
-  baseURL: "https://kinal-cast-68zgo73bx-jbraulio85s-projects.vercel.app/twitch/v1",
-  timeout:1000
+  baseURL: `http://${ip}:3001/twitch/v1`,
+  //baseURL: "https://node-js-kinal-cast-2024.vercel.app/twitch/v1",
+  timeout:5000
 });
 
-/*const publiApiClient = axios.create({
-  baseURL: "http://localhost:8080/twitch/v1",
-});*/
 
 apliClient.interceptors.request.use(
   (config) => {
     const userDetails = localStorage.getItem('user')
+    
 
     if(userDetails){
       const token = JSON.parse(userDetails).token

@@ -3,9 +3,9 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ReactFlvPlayer } from "react-flv-player";
-import { Chat } from "./Chat";
+import { Chat } from "../chat/Chat";
 import { ChannelDescription } from "./ChannelDescription";
-import { useChannelDetails } from "../../shared/hooks/useChannelDetails";
+import {useChannelDetails} from "../../shared/hooks/useChannelDetails";
 import { LoadingSpinner } from "../../components/LoadingSpinner";
 
 export const Stream = ({ streamUrl }) => {
@@ -36,7 +36,8 @@ export const ChannelView = ({ getChannels }) => {
           <Stream streamUrl={channelDetails.streamUrl} />
         ) : (
           <div className="channel-offline-placeholder">
-            <span>Channel is offline</span>
+            <span><h1>OFFLINE 😢</h1></span>
+            <span>Canal no está transmitiendo en este momento </span>
           </div>
         )}
         <ChannelDescription
@@ -47,7 +48,7 @@ export const ChannelView = ({ getChannels }) => {
           getChannels={getChannels}
         />
       </div>
-      <Chat />
+      <Chat channelId={channelDetails.id}/>
     </div>
   );
 };

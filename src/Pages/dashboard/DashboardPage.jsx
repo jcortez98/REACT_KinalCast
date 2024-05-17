@@ -4,8 +4,9 @@ import { useEffect } from 'react'
 import { Nav } from '../../components/navbar/Nav'
 import { Sidebar } from '../../components/navbar/Sidebar'
 import { Content } from '../../components/dashboard/Content'
-import { useChannels, useUserDetails } from '../../shared/hooks'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
+import { useChannels, useUserDetails } from '../../shared/hooks'
+import { connectWithSocketServer } from '../../services'
 
 import './dashboardPage.css'
 
@@ -14,7 +15,8 @@ export const DashboardPage = () => {
   const { isLogged } = useUserDetails()
 
   useEffect(() => {
-    getChannels(isLogged)
+    getChannels(isLogged),
+    connectWithSocketServer()
   }, [])
 
   if (isFetching) {
@@ -23,6 +25,7 @@ export const DashboardPage = () => {
 
   return (
     <div className='dashboard-container'>
+      <div className='dashboard-background'></div>
       <Nav />
       <Sidebar channels={followedChannels}/>
       <Content channels={allChannels} getChannels={getChannels} />

@@ -86,6 +86,7 @@ export const Register = ({ switchAuthHandler }) => {
       formState.email.value, 
       formState.password.value, 
       formState.username.value)
+
   }
 
   const isSubmitButtonDisable = !formState.password.isValid ||
@@ -96,7 +97,7 @@ export const Register = ({ switchAuthHandler }) => {
 
   return (
     <div className="register-container">
-      <Logo text={"Register KinalCast"} />
+      <Logo text={"Registro"} />
       <form className="auth-form">
         <Input
           field="email"

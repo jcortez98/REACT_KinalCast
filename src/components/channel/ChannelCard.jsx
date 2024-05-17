@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-const imageUrl= 'https://i.pinimg.com/736x/dc/9c/61/dc9c614e3007080a5aff36aebb949474.jpg'
+const imageUrl= 'https://static.vecteezy.com/system/resources/previews/000/442/172/original/vector-video-camera-icon.jpg'
 
 const ChannelAvatar = ({url}) => {
+    const displayUrl = url !== 'none' ? url : imageUrl;
     return (
         <div className="channels-avatar-container">
-            <img src={url || imageUrl} width='100%' height='100%' alt="avatar" />
+            <img src={displayUrl} width='100%' height='100%' alt="avatar" />
         </div>
     )
 }

@@ -17,6 +17,7 @@ export const AuthPage = () => {
       ) : (
         <Register switchAuthHandler={handleAuthPageToggle} />
       )}
+      <div className='auth-background'></div>
     </div>
   );
 };
