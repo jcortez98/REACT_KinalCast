@@ -2,11 +2,12 @@ import { io } from "socket.io-client";
 import { useStore } from "./store";
 
 let socket;
-const ip = "192.168.42.125"
+const ip = "127.0.0.1"
 
 export const connectWithSocketServer = () => {
-  socket = io(`http://${ip}:3001`);
-
+  //socket = io(`https://node-js-kinal-cast-2024.vercel.app/`);
+  socket = io(`http://18.119.102.15:3001`);
+  
   socket.on("connect", () => {
 
   });

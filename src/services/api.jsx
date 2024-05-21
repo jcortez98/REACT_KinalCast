@@ -1,13 +1,14 @@
 import axios from "axios";
 import { logout } from "../shared/hooks/useLogout";
 
-
-const ip = "192.168.42.125";
+const ip = "127.0.0.1";
 
 const apliClient = axios.create({
-  baseURL: `http://${ip}:3001/twitch/v1`,
+  //baseURL: `http://${ip}:3001/twitch/v1`, 
   //baseURL: "https://node-js-kinal-cast-2024.vercel.app/twitch/v1",
-  timeout:5000
+  baseURL: 'http://18.119.102.15:3001/twitch/v1',
+  timeout:5000,
+  httpsAgent: false,
 });
 
 
